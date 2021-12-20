@@ -5,13 +5,17 @@ import { Home } from "./components/Pages/Home";
 import { About } from "./components/Pages/About";
 import { Blog } from "./components/Pages/Blog";
 import { Contact } from "./components/Pages/Contact";
+import Productos from "./components/Productos";
+import NavBarnuevo from "./components/NavBarNuevo";
+import Lonuevo from "./components/Lonuevo";
+
+
+
 
 function App() {
   return (
     <>
       <Router>
-        <NavBar />
-
         <div className="pages">
           <Switch>
             <Route exact path="/" component={Home} />
@@ -21,6 +25,15 @@ function App() {
           </Switch>
         </div>
       </Router>
+
+      <div>
+        <NavBarnuevo/>
+        <Productos/>
+        <Lonuevo/>
+      </div>
+      <div>
+      </div>
+      
     </>
   );
 }
