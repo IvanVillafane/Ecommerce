@@ -28,7 +28,6 @@ function App() {
 
       <div>
         <NavBarnuevo/>
-        <Productos/>
         <Lonuevo/>
       </div>
       <div>

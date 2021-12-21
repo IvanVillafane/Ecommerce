@@ -62,7 +62,7 @@ export default function Productos() {
       />
       <CardMedia
         className={classes.media}
-        image="https://s2.r29static.com/bin/entry/ebd/0,675,2000,1050/x,80/1929471/image.jpg"
+        image="https://cdn.shopify.com/s/files/1/0603/3031/1875/products/AO4971-002_Nike_Air_Max_270_React_Bauhaus_Phantom_a-L_1512x.jpg?v=1635479907"
         title="Paella dish"
       />
       <CardContent>

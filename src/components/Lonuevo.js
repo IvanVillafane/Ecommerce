@@ -8,12 +8,9 @@ import Productos from "../components/Productos";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    padding:theme.spacing(3),
   },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
+
 }));
 
 export default function Lonuevo(){
@@ -21,26 +18,29 @@ export default function Lonuevo(){
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <Productos/>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
         <Productos/>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
         <Productos/>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
         <Productos/>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
         <Productos/>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
         <Productos/>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Productos/>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
         <Productos/>
         </Grid>
       </Grid>
