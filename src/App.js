@@ -5,9 +5,8 @@ import { Home } from "./components/Pages/Home";
 import { About } from "./components/Pages/About";
 import { Blog } from "./components/Pages/Blog";
 import { Contact } from "./components/Pages/Contact";
-import Productos from "./components/Product";
 import NavBarnuevo from "./components/NavBarNuevo";
-import Lonuevo from "./components/Products";
+import Products from "./components/Products";
 
 
 
@@ -28,7 +27,7 @@ function App() {
 
       <div>
         <NavBarnuevo/>
-        <Lonuevo/>
+        <Products/>
       </div>
       <div>
       </div>

@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import logo from '../components/nike-football.png';
+import logo from '../components/nike.png';
 import { Badge, Grow } from '@material-ui/core';
 import { ShoppingCart } from '@material-ui/icons';
 
@@ -23,13 +23,20 @@ const useStyles = makeStyles((theme) => ({
       flexGrow:1,},
 
   Button:{
-      marginLeft: theme.spacing(2),
+      marginLeft: theme.spacing(4),
+      
   },
 
   Image:{
-      height:"1rem",
+      marginRight:"15px",
+      heigth:"7rem",
+      width:"150px"
       
   },
+  logo:{
+    width:"2px",
+
+  }
 }));
 
 export default function NavBarnuevo() {
@@ -40,17 +47,18 @@ export default function NavBarnuevo() {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-<img src={logo}className={classes.image}/> 
+<img src={logo} className={classes.Image}/> 
      </IconButton>
-     <div className={classes.glow}/>
+     <div className={classes.grow}/>
           <Typography variant="h6" color='textPrimary' component="p">
             Hola usuario
           </Typography>
 <div className={classes.button}> 
 <Button variant="outlined">
 <strong>Entrar</strong></Button>
+
 <IconButton arial-label="show cart items" color="inherit">
-    <Badge badgeContent={2} color="secondary">
+    <Badge badgeContent={5} color="secondary">
 <ShoppingCart fontSize="large" color="white"/></Badge>
 
 </IconButton>
