@@ -2,8 +2,8 @@ import React from "react";
 
 export const Home = () => {
   return (
-    <div>
-      <h1>BIENVENIDO TUTOR</h1>
+    <div aria-label="center">
+      <h1>Directo de Miameeee</h1>
 </div>
   );
 };
