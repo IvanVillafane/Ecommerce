@@ -28,9 +28,9 @@ const useStyles = makeStyles((theme) => ({
   },
 
   Image:{
-      marginRight:"15px",
-      heigth:"7rem",
-      width:"150px"
+      marginRight:"2px",
+      heigth:"3rem",
+      width:"100px"
       
   },
   logo:{
