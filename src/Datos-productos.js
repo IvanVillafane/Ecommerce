@@ -52,7 +52,26 @@ const products = [
     rating: 3,
     image: "https://cdn.shopify.com/s/files/1/0603/3031/1875/products/DA2777-600a_1512x.jpg?v=1634024542" ,
     Description:"Nike para trote"},
-    
+    {
+        id: 1 ,
+       name: "zapas",
+       productType: "Running",
+       price : 50 ,
+       rating: 6 ,
+       image: "https://cdn.shopify.com/s/files/1/0603/3031/1875/products/DA3266-006a_1512x.jpg?v=1634014153" ,
+       Description:"Nike para trote"},
+           
+       {
+       id: 1 ,
+       name: "zapas",
+       productType: "Running",
+       price : 50 ,
+       rating: 3,
+       image: "https://cdn.shopify.com/s/files/1/0603/3031/1875/products/DA2777-600a_1512x.jpg?v=1634024542" ,
+       Description:"Nike para trote"},
+       
+   
+
 ]
 
 export default products;
