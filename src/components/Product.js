@@ -15,7 +15,6 @@ import { AddShoppingCart } from '@material-ui/icons';
 import accounting from "accounting";
 
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -39,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Productos() {
+export default function Product({product : {id, name, productType, image, price, rating, description}}) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -55,26 +54,26 @@ export default function Productos() {
             className={classes.action}
             varian='h5'
             color='textSecondary'>
-            {accounting.formatMoney(50)}
+            {accounting.formatMoney(price)}
             </Typography>} 
-        title="PRODUCTO"
+        title={name}
         subheader="En stock"
       />
       <CardMedia
         className={classes.media}
-        image="https://cdn.shopify.com/s/files/1/0603/3031/1875/products/AO4971-002_Nike_Air_Max_270_React_Bauhaus_Phantom_a-L_1512x.jpg?v=1635479907"
-        title="Paella dish"
+        image={image}
+        title={name}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-        Zapas Deportivas
+         {productType}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label='add to cart' >
           <AddShoppingCart fontSize='large'/>
         </IconButton>
-        {Array(4)
+        {Array(rating)
         .fill()
         .map((_,i)=>(
          <p>&#11088;</p>))} 
@@ -92,8 +91,8 @@ export default function Productos() {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-        <Typography paragraph>"Zapatillas deportivas para trotar en Palermo"</Typography>
         </CardContent>
+        <Typography paragraph>{description}</Typography>
 
       </Collapse>
     </Card>
