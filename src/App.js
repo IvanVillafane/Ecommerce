@@ -13,7 +13,6 @@ function App() {
     <Router>
          <div className="App">
         <NavBarnuevo/>
-        <Switch>
         <Router to="checkout-page">
           <section>
           <CheckoutPage/>
@@ -26,7 +25,6 @@ function App() {
   
           <Router path="/">
           </Router>
-        </Switch>
         
       </div>
 
