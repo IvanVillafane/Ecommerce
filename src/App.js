@@ -1,12 +1,8 @@
 import "./App.css";
-import NavBar from "./components/NavBar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Home } from "./components/Pages/Home";
-import { About } from "./components/Pages/About";
-import { Blog } from "./components/Pages/Blog";
-import { Contact } from "./components/Pages/Contact";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import NavBarnuevo from "./components/NavBarNuevo";
 import Products from "./components/Products";
+import CheckoutPage from "./components/CheckoutPage";
 
 
 
@@ -14,25 +10,32 @@ import Products from "./components/Products";
 function App() {
   return (
     <>
-      <Router>
-        <div className="pages">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/blog" component={Blog} />
-            <Route path="/contact" component={Contact} />
-          </Switch>
-        </div>
-      </Router>
-
-      <div>
+    <Router>
+         <div className="App">
         <NavBarnuevo/>
-        <Products/>
+        <Switch>
+        <Router to="checkout-page">
+          <section>
+          <CheckoutPage/>
+             <Products/>
+
+
+          </section>
+         
+          </Router>
+  
+          <Router path="/">
+          </Router>
+        </Switch>
+        
       </div>
-      <div>
-      </div>
+
+
+    </Router>
+        </>
+
+     
       
-    </>
   );
 }
 

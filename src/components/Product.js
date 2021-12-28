@@ -10,10 +10,11 @@ import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { AddShoppingCart } from '@material-ui/icons';
 import accounting from "accounting";
-
+import { useStateValue } from './StateProvider';
+import { actionTypes } from '../reducer';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,15 +37,25 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     backgroundColor: red[500],
   },
+
+
 }));
 
 export default function Product({product : {id, name, productType, image, price, rating, description}}) {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+  const [{basket}, dispatch] = useStateValue();
+  
+  const addToBasket =() => {
+    dispatch ({
+      type: actionTypes.ADD_TO_BASKET,
+      item:{
+      id, name, productType, image, price, rating, description }
+    })
+  }
+  const removeItem = () => dispatch({
+    type: actionTypes.REMOVE_ITEM,
+    id: id,
+  })
 
   return (
     <Card className={classes.root}>
@@ -70,31 +81,19 @@ export default function Product({product : {id, name, productType, image, price,
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label='add to cart' >
-          <AddShoppingCart fontSize='large'/>
+        <IconButton aria-label='add to cart' onClick={addToBasket} >
+          <AddShoppingCart fontSize='large' onClick={removeItem}/>
         </IconButton>
         {Array(rating)
         .fill()
         .map((_,i)=>(
          <p>&#11088;</p>))} 
+             <IconButton>
+         <DeleteIcon fontSize='large' />
+         </IconButton>
 
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
       </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-        </CardContent>
-        <Typography paragraph>{description}</Typography>
-
-      </Collapse>
+      
     </Card>
   );
 }
